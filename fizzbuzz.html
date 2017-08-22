@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <h1> divide by 3</h1>
+</head>
+
+<body>
+
+    <p id="number">
+        <p>
+
+            <script type="text/javascript">
+                var b = 0;
+
+                function doit() {
+
+
+                    //value of number
+                    var container = document.createElement("div");
+                    b = b + 1;
+
+                    if (b % 3 === 0 && b % 5 === 0) {
+
+                        container.innerHTML = "fizzbuzz!!";
+                        document.getElementById("this").appendChild(container);
+                    } else if (b % 3 === 0 && b % 5 !== 0) {
+
+                        container.innerHTML = "fizz";
+                        document.getElementById("this").appendChild(container);
+                    } else if (b % 5 === 0 && b % 3 !== 0) {
+
+                        container.innerHTML = "buzz";
+                        document.getElementById("this").appendChild(container);
+                    } else {
+                        container.innerHTML = b;
+                        document.getElementById("this").appendChild(container);
+
+                    }
+
+
+                }
+
+                function del() {
+                    var list = document.getElementById("this");
+                    list.removeChild(list.childNodes[0]);
+                }
+            </script>
+
+
+            <button type=button onclick="doit()">click</button>
+
+            <button type=button onclick="del()">remove</button>
+
+            <div id="this"></div>
+
+</body>
+
+</html>
