@@ -4,53 +4,52 @@
 
 
 <head>
-<h1> divide by 3</h1>
+    <h1> divide by 3</h1>
 </head>
+
 <body>
 
-<input type =text id = "number" value = "">
+    <input type=text id="number" value="">
 
-<script type="text/javascript">
-var i = 1;
-function doit(){
+    <script type="text/javascript">
+        var i = 1;
 
-var a = document.getElementById("number").value;  //value of number
-var container = document.createElement("div");
+        function doit() {
 
-if (a%3 === 0 && a !==1){
-var b= a/3;
-container.innerHTML = "Iteration "+ i + ": " +b;
-document.getElementById("this").appendChild(container); 
-}
-else if (a%3 === 1 && a !==1){
-var b = a*1-1;
-b= b/3;
-container.innerHTML = "Iteration "+ i + ": " +b;
-document.getElementById("this").appendChild(container);  
-}
+            var a = document.getElementById("number").value; //value of number
+            var container = document.createElement("div");
 
-else if (a%3 === 2 && a !==1){
-var b = a*1+1;
-console.log(b);
-b= b/3;
-console.log(b);
-container.innerHTML = "Iteration "+ i + ": " +b;
-document.getElementById("this").appendChild(container);  
-}
+            if (a % 3 === 0 && a !== 1) {
+                var b = a / 3;
+                container.innerHTML = "Iteration " + i + ": " + b;
+                document.getElementById("this").appendChild(container);
+            } else if (a % 3 === 1 && a !== 1) {
+                var b = a * 1 - 1;
+                b = b / 3;
+                container.innerHTML = "Iteration " + i + ": " + b;
+                document.getElementById("this").appendChild(container);
+            } else if (a % 3 === 2 && a !== 1) {
+                var b = a * 1 + 1;
+                console.log(b);
+                b = b / 3;
+                console.log(b);
+                container.innerHTML = "Iteration " + i + ": " + b;
+                document.getElementById("this").appendChild(container);
+            }
 
 
 
-document.getElementById("number").value=b;
-i++;
+            document.getElementById("number").value = b;
+            i++;
 
-}
+        }
+    </script>
 
-</script>
 
+    <button type=button onclick="doit()">click</button>
 
-<button type=button onclick= "doit()">click</button>
-
-<div id = "this"></div>
+    <div id="this"></div>
 
 </body>
+
 </html>
