@@ -7,6 +7,7 @@
 <h1> Info</h1>
 </head>
 <body>
+        
         <script> 
                 var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json";
                 var request = new XMLHttpRequest();
@@ -15,15 +16,21 @@
                 request.send();
                 request.onload = function() {
                 var requestData = request.response;
-                var myH1 = document.createElement('h1');
-                 myH1.textContent = requestData['squadName'];
+                var myH1 = document.createElement('p');
+                myH1.setAttribute("id", "first");
+                 myH1.textContent = "Squad : " + requestData['squadName'];
+                
                 document.getElementsByTagName('body')[0].appendChild(myH1);
-                document.innerHTML= "<br>";
+                
+                
 
-                var myH2 = document.createElement('h2');
-                 myH2.textContent = requestData['members'][0].name;
+                var myH2 = document.createElement('p');
+                myH2.setAttribute("id", "second");
+                 myH2.textContent = "First superhero is " + requestData['members'][0].name;
                 document.getElementsByTagName('body')[0].appendChild(myH2);
                 }
+
+
 
                
 

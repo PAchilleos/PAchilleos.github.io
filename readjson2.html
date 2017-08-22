@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+    <h1> Info</h1>
+</head>
+
+<body>
+    <input type="text" id="kng" value=""> Please enter king</input>
+    <p id="demo"></p>
+    <script>
+       
+       
+
+        var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
+        var request = new XMLHttpRequest();
+        request.open('GET', requestURL);
+        request.responseType = 'json'
+        request.send();
+        request.onload = function () {
+            var requestData = request.response;
+            var myH1 = document.createElement('h1');
+            
+            myH1.textContent = requestData[0]["nm"];      
+               
+            document.getElementsByTagName('body')[0].appendChild(myH1);
+            document.innerHTML = "<br>";
+            
+
+
+        }
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML =  myH1.filter(document.getElementById("kng").value);
+        }
+
+    </script>
+
+
+    <br>
+    <button onclick="myFunction()">Try it</button>
+</body>
+
+</html>

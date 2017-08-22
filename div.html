@@ -19,16 +19,16 @@
             var a = document.getElementById("number").value; //value of number
             var container = document.createElement("div");
 
-            if (a % 3 === 0 && a !== 1) {
+            if (a % 3 === 0) {
                 var b = a / 3;
                 container.innerHTML = "Iteration " + i + ": " + b;
                 document.getElementById("this").appendChild(container);
-            } else if (a % 3 === 1 && a !== 1) {
+            } else if (a % 3 === 1) {
                 var b = a * 1 - 1;
                 b = b / 3;
                 container.innerHTML = "Iteration " + i + ": " + b;
                 document.getElementById("this").appendChild(container);
-            } else if (a % 3 === 2 && a !== 1) {
+            } else if (a % 3 === 2) {
                 var b = a * 1 + 1;
                 console.log(b);
                 b = b / 3;
@@ -41,8 +41,9 @@
 
             document.getElementById("number").value = b;
             i++;
+}
 
-        }
+        
     </script>
 
 
