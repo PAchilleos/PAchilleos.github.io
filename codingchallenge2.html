@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+<a> Coding Challenge 2<a>
+</head>
+<body>
+<br>
+<script type="text/javascript">
+function yay(a){
+return a*a;
+}
+var x = yay(24);
+document.write(x);
+</script>
+<br>
+<script type="text/javascript">
+function yay(a,b,c){
+return a+b+c;
+}
+var x = yay(2,14,78);
+document.write(x);
+</script>
+<br>
+<script>
+var Person ={
+name: "Bob",
+age: 35,
+job: "builder"
+}
+document.write(Person.name + ' ' + Person.age + ' ' +Person.job);
+Person.name = "Laura"
+Person.age = 22
+Person.job = "salesperson"
+document.write ("<br>");
+document.write(Person.name + ' ' + Person.age + ' ' +Person.job);
+
+document.write ("<br>");
+document.write ("<br>");
+
+
+function addone(){
+Person.age++;
+}
+addone();
+document.write(Person.name + ' ' + Person.age + ' ' +Person.job);
+
+</script>
+
+</body>
+</html>
