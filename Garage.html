@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<style>
+    #grid {
+        width: 800px;
+        display: grid;
+        grid-template-areas: "a a";
+        grid-gap: 100px;
+        grid-auto-rows: 100px;
+    }
+
+    #grid>div {
+        background-color: white;
+    }
+</style>
+
+
+<head>
+    <h1> Garage</h1>
+</head>
+
+<body>
+    <div id="grid">
+        <div id="item1">
+            <div><input type=text id="make" value=""> Car Make</input>
+            </div>
+            <div><input type=text id="model" value=""> Car Model</input>
+            </div>
+            <div><input type=text id="year" value=""> Year Registered</input>
+            </div>
+            <div><input type=text id="reg" value=""> Number Plate</input>
+            </div>
+            <div><button type=button onclick="addcar()">Add Car</button></div>
+        </div>
+
+
+
+
+        <div id="item2">
+            <div><input type=text id="makedeet" value=""></input>
+            </div>
+            <button type=button onclick="cardeets()">Get car details by Number Plate</button>
+            <div id="deets"></div>
+        </div>
+
+        <div id="item3">
+            <div><input type=text id="pltrem" value=""></input>
+            </div>
+            <button type=button onclick="remcar()">Remove Car by Number Plate</button>
+            <div id="rem"></div>
+        </div>
+
+        <div id="item4"> <button type=button onclick="remcar()">Show Garage Contents</button></div>
+        <div id="all"></div>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="GarageJS.js"></script>
+
+</html>
