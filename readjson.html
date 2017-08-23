@@ -15,7 +15,7 @@
                 request.open('GET', requestURL);
                 request.responseType = 'json'
                 request.send();
-                request.onload = function () {
+                request.onload = () => {
                         var requestData = request.response;
                         var myH1 = document.createElement('p');
                         myH1.setAttribute("id", "first");
