@@ -4,47 +4,39 @@
 
 
 <head>
-<h1> Info</h1>
+        <h1> Info</h1>
 </head>
+
 <body>
-        
-        <script> 
+
+        <script>
                 var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json";
                 var request = new XMLHttpRequest();
                 request.open('GET', requestURL);
                 request.responseType = 'json'
                 request.send();
-                request.onload = function() {
-                var requestData = request.response;
-                var myH1 = document.createElement('p');
-                myH1.setAttribute("id", "first");
-                 myH1.textContent = "Squad : " + requestData['squadName'];
-                
-                document.getElementsByTagName('body')[0].appendChild(myH1);
-                
-                
+                request.onload = function () {
+                        var requestData = request.response;
+                        var myH1 = document.createElement('p');
+                        myH1.setAttribute("id", "first");
+                        myH1.textContent = "Squad : " + requestData['squadName'];
 
-                var myH2 = document.createElement('p');
-                myH2.setAttribute("id", "second");
-                 myH2.textContent = "First superhero is " + requestData['members'][0].name;
-                document.getElementsByTagName('body')[0].appendChild(myH2);
+                        document.getElementsByTagName('body')[0].appendChild(myH1);
+
+
+
+                        var myH2 = document.createElement('p');
+                        myH2.setAttribute("id", "second");
+                        myH2.textContent = "First superhero is " + requestData['members'][0].name;
+                        document.getElementsByTagName('body')[0].appendChild(myH2);
                 }
+        </script>
 
-
-
-               
-
-                
-
-                
-            </script>
-
-<script type="text/javascript">
-
-</script>
-<br>
-<script type="text/javascript">
-
-</script>
+        <script type="text/javascript">
+        </script>
+        <br>
+        <script type="text/javascript">
+        </script>
 </body>
+
 </html>

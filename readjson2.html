@@ -11,36 +11,34 @@
     <input type="text" id="kng" value=""> Please enter king</input>
     <p id="demo"></p>
     <script>
-       
-       
-
+        var requestData;
+        var list = [];
         var requestURL = "https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json";
         var request = new XMLHttpRequest();
         request.open('GET', requestURL);
         request.responseType = 'json'
         request.send();
         request.onload = function () {
-            var requestData = request.response;
-            var myH1 = document.createElement('h1');
-            
-            myH1.textContent = requestData[0]["nm"];      
-               
-            document.getElementsByTagName('body')[0].appendChild(myH1);
-            document.innerHTML = "<br>";
-            
-
-
+            requestData = request.response;
         }
+
+
 
         function myFunction() {
-            document.getElementById("demo").innerHTML =  myH1.filter(document.getElementById("kng").value);
-        }
+            var a = requestData.filter((b) => {
+                return b.nm === (document.getElementById("kng").value);
+            });
+            var par = document.createElement("p");
+            par.textContent = "Name: " + a[0].nm + "| City: " + a[0].cty + "| House: " + a[0].hse +
+                "| Years Reigned: " + a[0].yrs;
+            document.getElementsByTagName('body')[0].appendChild(par);
 
+        }
     </script>
 
 
     <br>
-    <button onclick="myFunction()">Try it</button>
+    <button onclick="myFunction()">Get His Details</button>
 </body>
 
 </html>
