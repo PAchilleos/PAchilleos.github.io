@@ -14,13 +14,19 @@ function addcar() {
 
 function cardeets() {
     var container = document.getElementById("deets");
+    container.innerHTML = "";
+    let val = document.getElementById("deet").value;
     //console.log(document.getElementById("pltdeet").value)
     var a = CarList.filter((b) => {
-        return b.reg === (document.getElementById("pltdeet").value);
+        return b.reg === (val) || b.Make === (val) || b.Model === (val) || b.year === (val)
     });
     console.log(a);
     if (a.length !== 0) {
-        container.innerHTML = "Make: " + a[0].Make + "<br> Model: " + a[0].Model + "<br> Year: " + a[0].year + "<br> RegNo: " + a[0].reg;
+        for (let i = 0; i < a.length; i++) {
+            var par = document.createElement("p");
+            par.innerHTML = "Make: " + a[i].Make + "<br> Model: " + a[i].Model + "<br> Year: " + a[i].year + "<br> RegNo: " + a[i].reg;
+            container.appendChild(par);
+        }
     } else {
         container.innerHTML = "Car does not exist in the Garage";
     }
