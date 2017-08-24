@@ -24,10 +24,11 @@
 
         function myFunction() {
             document.getElementById("res").innerHTML = "";
+            let val = document.getElementById("kng").value;
+            val = val.toLowerCase();
             var a = requestData.filter((b) => {
-                return b.nm.includes(document.getElementById("kng").value) || b.cty.includes(document.getElementById(
-                    "kng").value) || b.hse.includes(document.getElementById("kng").value) || b.yrs.includes(
-                    document.getElementById("kng").value);
+                return b.nm.toLowerCase().includes(val) || b.cty.toLowerCase().includes(val) || b.hse.toLowerCase()
+                    .includes(val) || b.yrs.toLowerCase().includes(val);
             });
             for (let i = 0; i < a.length; i++) {
                 var par = document.createElement("p");
