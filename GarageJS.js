@@ -60,9 +60,12 @@ function allcar() {
     var container = document.getElementById("all");
     container.innerHTML = "";
     for (i = 0; i < CarList.length; i++) {
+        if (CarList[i].prc.includes("Bracket")) {
+            CarList[i].prc = "N/A";
+        }
         j = i + 1;
         var a = document.createElement("p");
-        a.innerHTML = "Car " + j + "<br> Make: " + CarList[i].Make + "<br> Model: " + CarList[i].Model + "<br> Year: " + CarList[i].year + "<br> RegNo: " + CarList[i].reg
+        a.innerHTML = "Car " + j + "<br> Make: " + CarList[i].Make + "<br> Model: " + CarList[i].Model + "<br> Year: " + CarList[i].year + "<br> RegNo: " + CarList[i].reg + "<br> Price: " + CarList[i].prc;
         container.appendChild(a);
     }
 
