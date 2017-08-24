@@ -23,13 +23,18 @@
 
 
         function myFunction() {
+            document.getElementById("res").innerHTML = "";
             var a = requestData.filter((b) => {
-                return b.nm === (document.getElementById("kng").value);
+                return b.nm === (document.getElementById("kng").value) || b.cty === (document.getElementById(
+                    "kng").value) || b.hse === (document.getElementById("kng").value) || b.yrs === (
+                    document.getElementById("kng").value);
             });
-            var par = document.createElement("p");
-            par.textContent = "Name: " + a[0].nm + "| City: " + a[0].cty + "| House: " + a[0].hse +
-                "| Years Reigned: " + a[0].yrs;
-            document.getElementsByTagName('body')[0].appendChild(par);
+            for (let i = 0; i < a.length; i++) {
+                var par = document.createElement("p");
+                par.textContent = "Name: " + a[i].nm + "| City: " + a[i].cty + "| House: " + a[i].hse +
+                    "| Years Reigned: " + a[i].yrs;
+                document.getElementById("res").appendChild(par);
+            }
 
         }
     </script>
@@ -37,6 +42,7 @@
 
     <br>
     <button onclick="myFunction()">Get His Details</button>
+    <div id="res"></div>
 </body>
 
 </html>
