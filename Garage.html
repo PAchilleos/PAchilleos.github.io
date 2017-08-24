@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
-<style>
-    #grid {
-        width: 800px;
-        display: grid;
-        grid-template-areas: "a a";
-        grid-gap: 100px;
-        grid-auto-rows: 100px;
-    }
-
-    #grid>div {
-        background-color: white;
-    }
-</style>
-
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
 
 <head>
     <h1> Garage</h1>
@@ -22,36 +9,49 @@
 <body>
     <div id="grid">
         <div id="item1">
-            <div><input type=text id="make" value=""> Car Make</input>
+            <div><input type=text class="css-input" id="make" value=""> Car Make</input>
             </div>
-            <div><input type=text id="model" value=""> Car Model</input>
+            <div><input type=text class="css-input" id="model" value=""> Car Model</input>
             </div>
-            <div><input type=text id="year" value=""> Year Registered</input>
+            <div><input type=text class="css-input" id="year" value=""> Year Registered</input>
             </div>
-            <div><input type=text id="reg" value=""> Number Plate</input>
+            <div class="select"><input type=text class="css-input" id="reg" value=""> Number Plate</input>
             </div>
-            <div><button type=button onclick="addcar()">Add Car</button></div>
+            <div class="select">
+                <select>
+                    <option id = "default">Price Bracket</option>
+                    <option id="1">£0-£5000</option>
+                    <option id="2">£5001-£20,000</option>
+                    <option id="3">£20,001-£100,000</option>
+                    <option id="4">over £100,000</option>
+                </select>
+                <div class="select_arrow">
+                </div>
+            </div>
+
+
+            <div><button class="btn" type=button onclick="addcar()">Add Car</button></div>
+
         </div>
 
-
-
-
         <div id="item2">
-            <div><input type=text id="pltdeet" value=""></input>
+            <div><input type=text class="css-input" id="pltdeet" value=""></input>
             </div>
-            <button type=button onclick="cardeets()">Get car details by Number Plate</button>
+            <button class="btn" type=button onclick="cardeets()">Get car details by Number Plate</button>
             <div id="deets"></div>
         </div>
 
         <div id="item3">
-            <div><input type=text id="pltrem" value=""></input>
+            <div><input type=text class="css-input" id="pltrem" value=""></input>
             </div>
-            <button type=button onclick="remcar()">Remove Car by Number Plate</button>
+            <button class="btn" type=button onclick="remcar()">Remove Car by Number Plate</button>
             <div id="rem"></div>
         </div>
 
-        <div id="item4"> <button type=button onclick="allcar()">Show Garage Contents</button></div>
-        <div id="all"></div>
+        <div id="item4">
+            <button class="btn" type=button onclick="allcar()">Show Garage Contents</button>
+            <div id="all"></div>
+        </div>
     </div>
 
 </body>

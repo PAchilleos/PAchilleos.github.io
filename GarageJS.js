@@ -20,7 +20,7 @@ function cardeets() {
     });
     console.log(a);
     if (a.length !== 0) {
-        container.innerHTML = "Make: " + a[0].Make + "| Model: " + a[0].Model + "| Year: " + a[0].year + "| RegNo: " + a[0].reg;
+        container.innerHTML = "Make: " + a[0].Make + "<br> Model: " + a[0].Model + "<br> Year: " + a[0].year + "<br> RegNo: " + a[0].reg;
     } else {
         container.innerHTML = "Car does not exist in the Garage";
     }
@@ -42,12 +42,12 @@ function remcar() {
 }
 
 function allcar() {
-    var container = document.getElementById("rem");
+    var container = document.getElementById("all");
     container.innerHTML = "";
     for (i = 0; i < CarList.length; i++) {
         j = i + 1;
         var a = document.createElement("p");
-        a.innerHTML = "Car " + j + " Make: " + CarList[i].Make + "| Model: " + CarList[i].Model + "| Year: " + CarList[i].year + "| RegNo: " + CarList[i].reg
+        a.innerHTML = "Car " + j + "<br> Make: " + CarList[i].Make + "<br> Model: " + CarList[i].Model + "<br> Year: " + CarList[i].year + "<br> RegNo: " + CarList[i].reg
         container.appendChild(a);
     }
 
