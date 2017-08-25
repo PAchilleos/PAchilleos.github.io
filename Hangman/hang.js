@@ -12,7 +12,8 @@ function get() {
     j = 0;
     i = 1;
     document.getElementById("img").src = "0.png"
-    document.getElementById("img").classList.add('default');
+    document.getElementById("img").classList.remove("rotating");
+    document.getElementById("res").innerHTML = ""
 
     // Create request
     let xhr = new XMLHttpRequest();
@@ -45,7 +46,8 @@ function w(wrd) {
     j = 0;
     i = 1;
     document.getElementById("img").src = "0.png"
-    document.getElementById("img").classList.add('default');
+    document.getElementById("img").classList.remove("rotating");
+    document.getElementById("res").innerHTML = ""
 
     let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     document.getElementById("wordy").value = "";
