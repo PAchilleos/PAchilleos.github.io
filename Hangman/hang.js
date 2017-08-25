@@ -2,8 +2,8 @@ let word; //word to guess
 let wordList = [];
 let s; // character array of displayed word
 var container;
-let j = 0;
-let i = 1;
+let j;
+let i;
 
 
 
@@ -41,6 +41,10 @@ function pickRandomWord() {
 }
 
 function w(wrd) {
+    j = 0;
+    i = 1;
+    document.getElementById("img").src = "0.png"
+
     let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     document.getElementById("wordy").value = "";
     document.getElementById("sofar").innerHTML = "";
