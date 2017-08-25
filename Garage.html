@@ -30,7 +30,7 @@
             </div>
 
 
-            <div><button class="btn" type=button onclick="addcar()">Add Car</button></div>
+            <div><button class="btn" type=button onclick="addcar(make.value,model.value,year.value,reg.value)">Add Car</button></div>
 
         </div>
 
@@ -44,7 +44,7 @@
         <div id="item3">
             <div><input type=text class="css-input" id="pltrem" value=""></input>
             </div>
-            <button class="btn" type=button onclick="remcar()">Remove Car by Number Plate</button>
+            <button class="btn" type=button onclick="remcar(pltrem.value)">Remove Car by Number Plate</button>
             <div id="rem"></div>
         </div>
 
@@ -52,6 +52,8 @@
             <button class="btn" type=button onclick="allcar()">Show Garage Contents</button>
             <div id="all"></div>
         </div>
+
+        <div id="item5"><textarea class="console" id="cons" value="-" onKeyDown="if(event.keyCode ==13){read(cons.value)}"></textarea></div>
     </div>
 
 </body>
