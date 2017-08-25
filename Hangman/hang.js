@@ -1,8 +1,32 @@
 let word; //word to guess
+let wordList = [];
 let s; // character array of displayed word
 var container;
 let j = 0;
 let i = 1;
+
+function get() {
+    let url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt";
+
+    // Create request
+    let xhr = new XMLHttpRequest();
+
+    // Setup on complete method
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            wordList = this.responseText.split("\n");
+            console.log(wordList);
+
+            pickRandomWord();
+        }
+    };
+
+    // open request
+    xhr.open('GET', url, true);
+
+    // send requests
+    xhr.send();
+}
 
 function sve() {
     let w = document.getElementById("word").value;
@@ -10,10 +34,18 @@ function sve() {
     return w;
 }
 
-function w() {
+function pickRandomWord() {
+    let num = Math.round(Math.random() * wordList.length);
+    let randomWord = wordList[num];
+    w(randomWord);
+}
+
+function w(wrd) {
+    let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     document.getElementById("sofar").innerHTML = "";
     s = []; //empty
-    word = sve();
+    word = wrd;
+    //console.log(word);
     word = word.toUpperCase();
     container = document.createElement("h1")
 
@@ -24,7 +56,10 @@ function w() {
     let a = s.join(" ");
     container.innerHTML = a;
     document.getElementById("sofar").appendChild(container);
-
+    for (let i = 0; i < letters.length; i++) {
+        let eyedee = letters[i];
+        document.getElementById("letter-button-" + eyedee).disabled = false;
+    }
 }
 
 function check(val) {
