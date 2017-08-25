@@ -15,8 +15,7 @@ function get() {
     xhr.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             wordList = this.responseText.split("\n");
-            console.log(wordList);
-
+            console.log("");
             pickRandomWord();
         }
     };
@@ -60,6 +59,7 @@ function w(wrd) {
         let eyedee = letters[i];
         document.getElementById("letter-button-" + eyedee).disabled = false;
     }
+    console.log("");
 }
 
 function check(val) {
