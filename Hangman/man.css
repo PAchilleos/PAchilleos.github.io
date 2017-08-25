@@ -65,11 +65,11 @@ button.active {
     border-radius: 28px;
     font-family: Arial;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px 20px 10px 20px;
     text-decoration: none;
     width: 10em;
-    height: 3em;
+    height: 4em;
 }
 
 .btn:hover {

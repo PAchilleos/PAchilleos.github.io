@@ -5,12 +5,14 @@
 
 
 <head>
-    <a> Hangman</a>
+    <h1> Hangman</h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <div><input type="text" id="wordy" value="" onKeyDown="if(event.keyCode ==13){w(wordy.value)}"></input>Type in word and press
-        enter
+    <label>Type in word and press enter</label>
+    <div><input class="w3-input" type="text" id="wordy" value="" onKeyDown="if(event.keyCode ==13){w(wordy.value)}"></input>
     </div>
 
     <button class="btn" type="button" onclick="get()">Or Generate from List</button>
