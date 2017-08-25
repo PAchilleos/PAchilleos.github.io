@@ -28,8 +28,8 @@ function w() {
 }
 
 function check(val) {
+    document.getElementById("letter-button-" + val).disabled = true;
     let indices = [];
-
 
     if (word.includes(val) && i < 10) {
         for (let i = 0; i < word.length; i++) {
@@ -53,7 +53,6 @@ function check(val) {
         document.getElementById("res").innerHTML = "YOU WIN YAY!!"
         i = 1000;
     }
-
 }
 
 function changeImage() {
