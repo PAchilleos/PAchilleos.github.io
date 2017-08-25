@@ -45,6 +45,7 @@ function w(wrd) {
     s = []; //empty
     word = wrd;
     //console.log(word);
+    word = word.replace(/\s/g, '');
     word = word.toUpperCase();
     container = document.createElement("h1")
 
