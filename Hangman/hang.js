@@ -15,7 +15,7 @@ function w() {
     s = []; //empty
     word = sve();
     word = word.toUpperCase();
-    container = document.createElement("p")
+    container = document.createElement("h1")
 
     for (let i = 0; i < word.length; i++) {
         s.push("_");
