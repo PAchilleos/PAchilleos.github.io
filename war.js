@@ -114,5 +114,7 @@ function test() {
         //wait(1000);
 
     }
-    console.log("stops taken: " + (s - 1));
+    var p = document.createElement("p");
+    p.innerHTML = "stops taken: " + (s - 1);
+    document.getElementById("result").appendChild(p);
 }
