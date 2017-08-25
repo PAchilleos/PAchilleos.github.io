@@ -47,6 +47,7 @@ function check(val) {
     }
     if (i == 10) {
         document.getElementById("res").innerHTML = "YOU LOSE MUAHAHAHA!!!"
+        document.getElementById("img").classList.add('rotating');
     }
     if (!(a.includes("_"))) {
         document.getElementById("res").innerHTML = "YOU WIN YAY!!"
