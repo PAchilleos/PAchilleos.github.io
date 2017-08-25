@@ -29,14 +29,15 @@ function w() {
 
 function check(val) {
     let indices = [];
+
+
     if (word.includes(val) && i < 10) {
         for (let i = 0; i < word.length; i++) {
             if (word[i] === val) {
                 s[i] = val;
             }
         }
-
-        let a = s.join(" ");
+        a = s.join(" ");
         container.innerHTML = a;
         document.getElementById("sofar").appendChild(container);
     } else {
@@ -45,8 +46,13 @@ function check(val) {
         }
     }
     if (i == 10) {
-        document.getElementById("lose").innerHTML = "YOU LOSE MUAHAHAHA!!!"
+        document.getElementById("res").innerHTML = "YOU LOSE MUAHAHAHA!!!"
     }
+    if (!(a.includes("_"))) {
+        document.getElementById("res").innerHTML = "YOU WIN YAY!!"
+        i = 1000;
+    }
+
 }
 
 function changeImage() {
