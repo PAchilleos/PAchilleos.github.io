@@ -6,6 +6,9 @@ let j;
 let i;
 let xhr;
 let url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt";
+let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+
 
 function promisedCondition(xhr) {
     return new Promise((resolve) => {
@@ -19,8 +22,10 @@ function promisedCondition(xhr) {
     })
 }
 
-function get() {
 
+
+
+function reset_hangman() {
     j = 0;
     i = 1;
     document.getElementById("img").src = "0.png"
@@ -28,16 +33,20 @@ function get() {
     document.getElementById("res").innerHTML = "";
 
 
-    let xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-
-
-    promisedCondition(xhr).then(pickRandomWord);
-
-
-    xhr.send();
+    for (let i = 0; i < letters.length; i++) {
+        let eyedee = letters[i];
+        document.getElementById("letter-button-" + eyedee).disabled = false;
+    }
 }
 
+function get_word() {
+
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    promisedCondition(xhr).then(pickRandomWord);
+    xhr.send();
+
+}
 
 
 function pickRandomWord() {
@@ -46,35 +55,38 @@ function pickRandomWord() {
     w(randomWord);
 }
 
-function w(wrd) {
-    j = 0;
-    i = 1;
-    document.getElementById("img").src = "0.png"
-    document.getElementById("img").classList.remove("rotating");
-    document.getElementById("res").innerHTML = ""
+function make_word(x) {
 
-    let letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-    document.getElementById("wordy").value = "";
-    document.getElementById("sofar").innerHTML = "";
-    s = []; //empty
-    word = wrd;
+    word = x;
     //console.log(word);
     word = word.replace(/\s/g, '');
     word = word.toUpperCase();
-    container = document.createElement("h1")
 
+
+}
+
+function make_hyphens() {
+    container = document.createElement("h1");
     for (let i = 0; i < word.length; i++) {
         s.push("_");
     }
 
+
     let a = s.join(" ");
     container.innerHTML = a;
     document.getElementById("sofar").appendChild(container);
-    for (let i = 0; i < letters.length; i++) {
-        let eyedee = letters[i];
-        document.getElementById("letter-button-" + eyedee).disabled = false;
-    }
+
     console.log("");
+
+}
+
+function w(wrd) {
+    reset_hangman();
+    document.getElementById("wordy").value = "";
+    document.getElementById("sofar").innerHTML = "";
+    s = []; //empty
+    make_word(wrd);
+    make_hyphens();
 }
 
 function check(val) {
