@@ -4,33 +4,37 @@ let s; // character array of displayed word
 var container;
 let j;
 let i;
+let xhr;
+let url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt";
 
+function promisedCondition(xhr) {
+    return new Promise((resolve) => {
+        xhr.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                wordList = this.responseText.split("\n");
+                resolve(wordList);
+            }
+        }
 
+    })
+}
 
 function get() {
-    let url = "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt";
+
     j = 0;
     i = 1;
     document.getElementById("img").src = "0.png"
     document.getElementById("img").classList.remove("rotating");
-    document.getElementById("res").innerHTML = ""
+    document.getElementById("res").innerHTML = "";
 
-    // Create request
+
     let xhr = new XMLHttpRequest();
-
-    // Setup on complete method
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            wordList = this.responseText.split("\n");
-            console.log("");
-            pickRandomWord();
-        }
-    };
-
-    // open request
     xhr.open('GET', url, true);
 
-    // send requests
+
+    promisedCondition(xhr).then(pickRandomWord);
+
+
     xhr.send();
 }
 
